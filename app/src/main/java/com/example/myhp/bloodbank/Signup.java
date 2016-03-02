@@ -21,7 +21,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener{
         Toolbar t=(Toolbar)findViewById(R.id.toolbar_signup);
         setSupportActionBar(t);
         String result[]={"A","B"};
-        ArrayAdapter<String> arr=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,result);
+        ArrayAdapter<String> arr=new ArrayAdapter<String>(getApplicationContext(),R.layout.spinner_item,result);
         Spinner sp=(Spinner)findViewById(R.id.spinner_signup);
         sp.setAdapter(arr);
         findViewById(R.id.bsignup).setOnClickListener(this);
