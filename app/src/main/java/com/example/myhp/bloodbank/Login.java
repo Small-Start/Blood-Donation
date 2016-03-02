@@ -1,5 +1,6 @@
 package com.example.myhp.bloodbank;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,7 +27,14 @@ findViewById(R.id.b_login).setOnClickListener(this);
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.b_login:
-
+                Class i = null;
+                try {
+                    i = Class.forName("com.example.myhp.bloodbank.Bloodmain");
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                Intent k = new Intent(getApplicationContext(), i);
+                startActivity(k);
                 break;
         }
     }
