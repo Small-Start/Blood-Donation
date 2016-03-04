@@ -23,17 +23,43 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_signup_name" />
+        android:id="@+id/edit_signup_name"
+        android:hint="Name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_signup_username"
+        android:hint="Username"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_signup_email" />
+        android:id="@+id/edit_signup_email"
+        android:hint="E-mail"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_signup_mobile"
+        android:hint="Mobile No"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_signup_pass"
+        android:hint="Password"
+
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_signup_bloodgroup" />
+        android:id="@+id/edit_signup_confirmpass"
+        android:hint="Confirm Password"
+
+        />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Blood Group:"/>
 
     <Spinner
         android:layout_width="match_parent"
@@ -47,4 +73,6 @@
         android:text="Signup"
         android:id="@+id/bsignup"
         android:layout_gravity="center_horizontal" />
+
+
 </LinearLayout>

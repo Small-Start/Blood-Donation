@@ -29,14 +29,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-mail:"
+        android:text="Username/Email"
         android:id="@+id/login_email"
         android:layout_below="@+id/view" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_login_email"
+        android:id="@+id/edit_login_username"
 
         android:textStyle="bold"
         android:layout_below="@+id/login_email"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Password:"
         android:id="@+id/login_password"
-        android:layout_below="@+id/edit_login_email"
+        android:layout_below="@+id/edit_login_username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
