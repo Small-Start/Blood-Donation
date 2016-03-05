@@ -25,4 +25,8 @@
             android:id="@+id/donation_give"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Score"/>
 </LinearLayout>
