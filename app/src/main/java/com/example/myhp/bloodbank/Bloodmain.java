@@ -1,5 +1,6 @@
 package com.example.myhp.bloodbank;
 
+import android.content.Intent;
 import android.location.Location;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,21 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Bloodmain extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -22,7 +35,7 @@ public class Bloodmain extends AppCompatActivity implements
     CharSequence Titles[]={"Give","Take"};
     int Numboftabs =2;
     protected static final String TAG = "MainActivity";
-
+String username=null;
     /**
      * Provides the entry point to Google Play services.
      */
@@ -66,6 +79,7 @@ public class Bloodmain extends AppCompatActivity implements
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
+        username=getSharedPreferences("user",0).getString("username","none");
 
         buildGoogleApiClient();
 
@@ -103,7 +117,43 @@ public class Bloodmain extends AppCompatActivity implements
         // in rare cases when a location is not available.
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
-            Toast.makeText(this,mLastLocation.getLatitude()+" "+mLastLocation.getLongitude(),Toast.LENGTH_LONG).show();
+            String url = "http://bloodbanksys.esy.es/bloodbank/user.php";
+           // Toast.makeText(this,mLastLocation.getLatitude()+" "+mLastLocation.getLongitude(),Toast.LENGTH_LONG).show();
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Toast.makeText(Bloodmain.this,response, Toast.LENGTH_LONG).show();
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //You can handle error here if you want
+                            Toast.makeText(Bloodmain.this, "its not working", Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
+                    params.put("username",username);
+                    params.put("lat",""+mLastLocation.getLatitude());
+                    params.put("lng",""+mLastLocation.getLongitude());
+
+                    //returning parameter
+                    return params;
+                }
+            };
+
+            //Adding the string request to the queue
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+
+            int socketTimeout = 20000;//30 seconds - change to what you want
+            RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+            stringRequest.setRetryPolicy(policy);
         } else {
             Toast.makeText(this, "No detection", Toast.LENGTH_LONG).show();
         }

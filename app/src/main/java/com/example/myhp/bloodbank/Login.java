@@ -121,11 +121,7 @@ username=((EditText)findViewById(R.id.edit_login_username)).getText().toString()
                             @Override
                             public void onResponse(String response) {
                                 Toast.makeText(Login.this,response, Toast.LENGTH_LONG).show();
-                             /*   try {
-                                    Thread.sleep(2000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }*/
+
                                 Class i = null;
                                 try {
                                     i = Class.forName("com.example.myhp.bloodbank.Bloodmain");
@@ -159,7 +155,7 @@ username=((EditText)findViewById(R.id.edit_login_username)).getText().toString()
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 requestQueue.add(stringRequest);
 
-                6int socketTimeout = 20000;//30 seconds - change to what you want
+                int socketTimeout = 20000;//30 seconds - change to what you want
                 RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
                 stringRequest.setRetryPolicy(policy);
                 break;

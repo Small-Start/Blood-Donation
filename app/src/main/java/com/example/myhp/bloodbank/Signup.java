@@ -1,6 +1,7 @@
 package com.example.myhp.bloodbank;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -69,6 +70,11 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
                 */
                 name = ((EditText) findViewById(R.id.edit_signup_name)).getText().toString();
                 username = ((EditText) findViewById(R.id.edit_signup_username)).getText().toString();
+
+                SharedPreferences sp=getSharedPreferences("user",0);
+SharedPreferences.Editor editor=sp.edit();
+                editor.putString("username",username);
+                editor.commit();
                 password = ((EditText) findViewById(R.id.edit_signup_pass)).getText().toString();
                 confirmpass = ((EditText) findViewById(R.id.edit_signup_confirmpass)).getText().toString();
                 if(!password.equals(confirmpass)){
