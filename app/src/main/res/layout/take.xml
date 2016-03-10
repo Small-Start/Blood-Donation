@@ -9,11 +9,10 @@
         android:id="@+id/edit_name"
         android:hint="Patient Name"/>
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_why"
-        android:hint="Why?"/>
+        android:id="@+id/spinner_take" />
 
     <Button
         android:layout_width="wrap_content"

@@ -37,7 +37,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
     String username,password,email,confirmpass,bloodgroup,pno,name;
     long pnoi;
     long score;
-    String result[]={"A","B"};
+    String result[]={"A+","A-","B+","B-","O+","O-","AB+","AB-"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
