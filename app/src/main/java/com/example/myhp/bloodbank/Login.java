@@ -1,5 +1,6 @@
 package com.example.myhp.bloodbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ import java.util.Map;
 public class Login extends AppCompatActivity implements View.OnClickListener{
 
    String username,password;
+    ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         Toolbar t=(Toolbar)findViewById(R.id.toolbar_login);
         setSupportActionBar(t);
 findViewById(R.id.b_login).setOnClickListener(this);
+        pd=new ProgressDialog(Login.this);
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("Loading....");
 
     }
 
@@ -53,6 +58,7 @@ findViewById(R.id.b_login).setOnClickListener(this);
                 Intent k = new Intent(getApplicationContext(), i);
                 startActivity(k);
                 break;*/
+                pd.show();
 username=((EditText)findViewById(R.id.edit_login_username)).getText().toString();
                 password=((EditText)findViewById(R.id.edit_login_password)).getText().toString();
                 String url = "http://bloodbanksys.esy.es/bloodbank/login.php";
@@ -120,6 +126,7 @@ username=((EditText)findViewById(R.id.edit_login_username)).getText().toString()
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                pd.hide();
                                 Toast.makeText(Login.this,response, Toast.LENGTH_LONG).show();
 
                                 Class i = null;
@@ -136,6 +143,7 @@ username=((EditText)findViewById(R.id.edit_login_username)).getText().toString()
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 //You can handle error here if you want
+                                pd.hide();
                                 Toast.makeText(Login.this, "its not working", Toast.LENGTH_LONG).show();
                             }
                         }) {

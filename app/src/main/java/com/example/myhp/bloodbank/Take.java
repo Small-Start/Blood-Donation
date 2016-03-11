@@ -1,5 +1,6 @@
 package com.example.myhp.bloodbank;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -55,6 +56,17 @@ Spinner sp=(Spinner)v.findViewById(R.id.spinner_take);
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+                        Class i = null;
+                        Bundle b=new Bundle();
+                        b.putString("response",response);
+                        try {
+                            i = Class.forName("com.example.myhp.bloodbank.Searchresult");
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        Intent k = new Intent(getContext(), i);
+                        k.putExtras(b);
+                        startActivity(k);
 
                     }
                 },

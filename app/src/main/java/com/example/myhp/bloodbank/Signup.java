@@ -1,5 +1,6 @@
 package com.example.myhp.bloodbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
     String username,password,email,confirmpass,bloodgroup,pno,name;
     long pnoi;
     long score;
+    ProgressDialog pd;
     String result[]={"A+","A-","B+","B-","O+","O-","AB+","AB-"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,9 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
         setContentView(R.layout.signup);
         Toolbar t=(Toolbar)findViewById(R.id.toolbar_signup);
         setSupportActionBar(t);
-
+pd=new ProgressDialog(Signup.this);
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("Loading....");
         ArrayAdapter<String> arr=new ArrayAdapter<String>(getApplicationContext(),R.layout.spinner_item,result);
         Spinner sp=(Spinner)findViewById(R.id.spinner_signup);
         sp.setAdapter(arr);
@@ -68,6 +72,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
                 startActivity(k);
                 break;
                 */
+                pd.show();
                 name = ((EditText) findViewById(R.id.edit_signup_name)).getText().toString();
                 username = ((EditText) findViewById(R.id.edit_signup_username)).getText().toString();
 
@@ -87,6 +92,7 @@ SharedPreferences.Editor editor=sp.edit();
               try {
                   pno=((EditText) findViewById(R.id.edit_signup_mobile)).getText().toString();
                   if(pno.length()!=10){
+                      pd.hide();
                       Toast.makeText(Signup.this, "Incorrect Mobile number length", Toast.LENGTH_SHORT).show();
                   break;
                   }
@@ -94,6 +100,7 @@ SharedPreferences.Editor editor=sp.edit();
 
               }
               catch(NumberFormatException n){
+                  pd.hide();
                 Toast.makeText(Signup.this, "Incorrect Mobile number", Toast.LENGTH_SHORT).show();
                  break;
               //  RequestQueue queue = Volley.newRequestQueue(this);
@@ -163,6 +170,7 @@ SharedPreferences.Editor editor=sp.edit();
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                pd.hide();
                                 Toast.makeText(Signup.this, response, Toast.LENGTH_LONG).show();
                                 Class i = null;
                                 try {
@@ -178,6 +186,7 @@ SharedPreferences.Editor editor=sp.edit();
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 //You can handle error here if you want
+                                pd.hide();
                                 Toast.makeText(Signup.this, "its not working", Toast.LENGTH_LONG).show();
                             }
                         }) {
@@ -205,6 +214,7 @@ SharedPreferences.Editor editor=sp.edit();
     }
 
     private void showerror() {
+        pd.hide();
         Toast.makeText(Signup.this,"password mismatch",Toast.LENGTH_LONG).show();
     }
 
