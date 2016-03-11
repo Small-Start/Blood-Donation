@@ -155,7 +155,7 @@ username=((EditText)findViewById(R.id.edit_login_username)).getText().toString()
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 requestQueue.add(stringRequest);
 
-                int socketTimeout = 20000;//30 seconds - change to what you want
+                int socketTimeout = 20000;//20 seconds - change to what you want
                 RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
                 stringRequest.setRetryPolicy(policy);
                 break;

@@ -3,11 +3,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/name_textinut_take"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_name"
         android:hint="Patient Name"/>
+    </android.support.design.widget.TextInputLayout>
 
     <Spinner
         android:layout_width="match_parent"

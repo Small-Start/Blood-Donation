@@ -50,7 +50,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener,Ad
         sp.setAdapter(arr);
         sp.setOnItemSelectedListener(this);
         findViewById(R.id.bsignup).setOnClickListener(this);
-        bloodgroup="A";
+        bloodgroup="A+";
 
     }
 
