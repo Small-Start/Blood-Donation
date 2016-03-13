@@ -9,6 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#B2EBF2"
     tools:context="com.example.myhp.bloodbank.Bloodmain">
 
     <ImageView
@@ -31,6 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-light"
         android:id="@+id/firsttime_login"
         android:background="@color/buttons"
        />
@@ -43,8 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Signup"
+        android:fontFamily="sans-serif-light"
         android:id="@+id/firsttime_signup"
-
+android:textColor="@color/text"
         android:background="@color/buttons"
        />
         </LinearLayout>
