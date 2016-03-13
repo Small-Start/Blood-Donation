@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_name"
-        android:hint="Patient Name"/>
+        android:textSize="24sp"
+        android:hint="Patient Name"
+        android:fontFamily="sans-serif-light"
+        android:padding="15dp"/>
     </android.support.design.widget.TextInputLayout>
 
     <TextView
@@ -19,10 +22,16 @@
         android:layout_height="wrap_content"
         android:text="Select Blood Group you want:"
         android:gravity="center"
+        android:textSize="24sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="15dp"
+        android:fontFamily="sans-serif-light"
 android:elevation="2dp"
         android:id="@+id/textView" />
 
     <Spinner
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_take"
@@ -32,6 +41,8 @@ android:elevation="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
         android:id="@+id/bsearch"
         android:background="@color/buttons"
         android:textColor="@color/text"

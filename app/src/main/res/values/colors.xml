@@ -6,4 +6,5 @@
     <color name="tabsScrollColor">#8a140e</color>
     <color name="buttons">#00BCD4</color>
     <color name="text">#FFFFFF</color>
+    <color name="background">#B2EBF2</color>
 </resources>

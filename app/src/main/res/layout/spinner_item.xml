@@ -7,7 +7,8 @@
     android:text="jhgvk"
         android:gravity="left"
     android:textAlignment="center"
-        android:textColor="#FF0000"
-    android:background="@color/colorPrimaryDark"
+        android:textColor="#000000"
+    android:background="#448AFF"
+    android:fontFamily="sans-serif-light"
         android:padding="5dip"
         />

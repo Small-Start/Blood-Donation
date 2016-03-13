@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/background"
 
 
     >
@@ -18,8 +18,9 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_login"
             android:layout_width="match_parent"
-            android:titleTextColor="@color/text"
-            android:title="LOGIN"
+
+
+            app:titleTextColor="@color/text"
             android:fontFamily="sans-serif-light"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Username/Email:"
         android:fontFamily="sans-serif-light"
+        android:textSize="24sp"
         android:id="@+id/login_email"
         android:layout_below="@+id/view" />
 
@@ -42,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_login_username"
+        android:textSize="22sp"
 
         android:textStyle="bold"
         android:layout_below="@+id/login_email"
@@ -52,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password:"
+        android:textSize="24sp"
         android:fontFamily="sans-serif-light"
         android:id="@+id/login_password"
         android:layout_below="@+id/edit_login_username"
@@ -63,6 +67,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
+        android:textSize="22sp"
         android:id="@+id/edit_login_password"
         android:textColor="#660000"
         android:textStyle="bold"
@@ -71,15 +76,15 @@
         android:layout_alignStart="@+id/login_password" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:fontFamily="sans-serif-light"
         android:background="@color/buttons"
         android:textColor="@color/text"
         android:id="@+id/b_login"
+        android:gravity="center"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
