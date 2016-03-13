@@ -27,7 +27,7 @@
         android:id="@+id/listview_searchresult"
         android:paddingBottom="1dp"
         android:paddingTop="1dp"
-        android:divider="@color/cardview_shadow_end_color"
-        android:dividerHeight="1dp"
+        android:divider="#000000"
+        android:dividerHeight="2dp"
         />
 </LinearLayout>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="2dp"
     android:weightSum="100">
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -9,7 +10,9 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardBackgroundColor="@color/buttons"
+        card_view:cardBackgroundColor="#00BCD4"
+        card_view:cardElevation="2dp"
+        android:padding="2dp"
         card_view:cardCornerRadius="4dp"
         android:layout_weight="50">
 <LinearLayout
@@ -18,16 +21,22 @@
     android:orientation="vertical"
     >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name"
-            android:id="@+id/give_name"/>
+            android:id="@+id/give_name"
+            android:textAlignment="center" />
 
-        </LinearLayout>
+</LinearLayout>
     </android.support.v7.widget.CardView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="50"></LinearLayout>
+        android:layout_weight="50">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/donateblood"/>
+    </LinearLayout>
 
 </LinearLayout>
