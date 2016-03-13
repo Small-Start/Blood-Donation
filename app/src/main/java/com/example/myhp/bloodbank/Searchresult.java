@@ -30,10 +30,11 @@ ListView lv=(ListView)findViewById(R.id.listview_searchresult);
             e.printStackTrace();
         }
         ArrayList<HashMap<String,String>> list=new ArrayList<>();
-        HashMap<String,String> map=new HashMap<>();
+
         for(int i=0;i<jr.length();i++)
         {
             JSONObject ob= null;
+            HashMap<String,String> map=new HashMap<>();
             try {
                 ob = jr.getJSONObject(i);
                 map.put("name",ob.getString("name"));
