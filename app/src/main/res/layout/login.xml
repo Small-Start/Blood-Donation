@@ -21,7 +21,8 @@
 
 
             app:titleTextColor="@color/text"
-            android:fontFamily="sans-serif-light"
+            app:titleTextAppearance="@style/RobotoTextViewStyle"
+
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
