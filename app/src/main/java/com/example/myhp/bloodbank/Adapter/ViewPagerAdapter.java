@@ -1,8 +1,11 @@
-package com.example.myhp.bloodbank;
+package com.example.myhp.bloodbank.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.example.myhp.bloodbank.Give;
+import com.example.myhp.bloodbank.Take;
 
 /**
  * Created by my hp on 2/23/2016.
