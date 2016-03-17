@@ -27,7 +27,16 @@
     android:textAlignment="center"
     android:textSize="24sp"
     android:text="Found Donors:"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:fontFamily="sans-serif-light"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+
+         />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,4 +46,9 @@
         android:divider="#000000"
         android:dividerHeight="1dp"
         />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/donateblood"/>
 </LinearLayout>
