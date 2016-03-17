@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="A+"
-            android:paddingTop="30dp"
+            android:paddingTop="35dp"
             android:id="@+id/text_userdetails_bloodgroup"
             android:layout_centerVertical="true"
             android:layout_alignRight="@+id/tv_user_details_name"
@@ -83,13 +83,18 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:paddingLeft="8dp"
-    android:id="@+id/"
-    android:layout_height="wrap_content">
 
+    android:layout_height="wrap_content">
+<ImageView
+    android:layout_width="16dp"
+    android:src="@drawable/location"
+    android:layout_height="16dp"
+    />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="km"
+        android:id="@+id/text_userdetails_distance"
         />
 </LinearLayout>
 
@@ -166,32 +171,38 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Call"
             android:paddingTop="5dp"
             android:id="@+id/button_userdetails_call"
-            android:layout_below="@+id/text_userdetails_contactdetails_mobile"
-            android:layout_alignParentLeft="true"
-            style="@style/RobotoTextViewStyle"
-            android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3" />
+android:layout_weight="50"
+            android:textColor="@color/text"
+            />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message"
             android:paddingTop="5dp"
-            style="@style/RobotoTextViewStyle"
+            android:layout_weight="50"
+            android:layout_gravity="right"
+            android:textColor="@color/text"
             android:id="@+id/button_userdetails_message"
-            android:layout_alignTop="@+id/button_userdetails_call"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
-
-</android.support.v7.widget.CardView>
+             />
+    </LinearLayout>
 
 </LinearLayout>
