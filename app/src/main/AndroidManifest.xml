@@ -31,7 +31,9 @@
         <activity
             android:name=".Searchresult"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-
+        <activity
+            android:name=".Userdetails"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
 
     </application>
 
