@@ -36,9 +36,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
         Toolbar t=(Toolbar)findViewById(R.id.toolbar_login);
         setSupportActionBar(t);
-findViewById(R.id.b_login).setOnClickListener(this);
+
+        findViewById(R.id.b_login).setOnClickListener(this);
         pd=new ProgressDialog(Login.this);
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("Loading....");
@@ -59,7 +61,7 @@ findViewById(R.id.b_login).setOnClickListener(this);
                 startActivity(k);
                 break;*/
                 pd.show();
-username=((EditText)findViewById(R.id.edit_login_username)).getText().toString();
+                username=((EditText)findViewById(R.id.edit_login_username)).getText().toString();
                 password=((EditText)findViewById(R.id.edit_login_password)).getText().toString();
                 String url = "http://bloodbanksys.esy.es/bloodbank/login.php";
             /*    JSONObject obj=new JSONObject();

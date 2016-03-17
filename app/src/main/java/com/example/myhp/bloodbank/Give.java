@@ -12,6 +12,7 @@ import android.widget.Toast;
  * Created by my hp on 3/2/2016.
  */
 public class Give extends Fragment implements View.OnClickListener{
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
