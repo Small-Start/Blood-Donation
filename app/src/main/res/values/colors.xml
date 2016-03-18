@@ -7,6 +7,9 @@
     <color name="buttons">#00BCD4</color>
     <color name="text">#FFFFFF</color>
     <color name="background">#B2EBF2</color>
+    <!--
+    <color name="bkc_card">#FF5722</color> !-->
+    <color name="bkc_card">#ff8080</color>
 
 
     <color name="md_red_50">#FFEBEE</color>

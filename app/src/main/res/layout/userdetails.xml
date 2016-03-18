@@ -33,7 +33,7 @@
     app:cardElevation="2dp"
     android:layout_marginTop="10dp"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#FF5722"
+    app:cardBackgroundColor="@color/bkc_card"
 
     >
     <RelativeLayout
@@ -106,7 +106,7 @@
         app:contentPadding="8dp"
         android:layout_marginTop="10dp"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="#FF5722"
+        app:cardBackgroundColor="@color/bkc_card"
 
         >
 
@@ -140,7 +140,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text"
+
             android:id="@+id/text_userdetails_contactdetails_email"
             android:text="email"
             android:layout_below="@+id/textView2"
@@ -164,7 +164,6 @@
             android:layout_height="wrap_content"
             android:text="mobile"
             android:paddingBottom="10dp"
-            android:textColor="@color/text"
             android:paddingTop="20dp"
             android:id="@+id/text_userdetails_contactdetails_mobile"
             android:layout_below="@+id/textView3"
