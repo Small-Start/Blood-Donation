@@ -39,6 +39,7 @@ public class Userdetails extends AppCompatActivity implements View.OnClickListen
         // pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // pd.show();
         response = getIntent().getExtras().getString("response");
+        position=getIntent().getExtras().getInt("position");
         JSONArray jr = null;
         try {
             jr = new JSONArray(response);

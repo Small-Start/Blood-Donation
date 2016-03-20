@@ -2,6 +2,7 @@ package com.example.myhp.bloodbank;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -29,14 +30,14 @@ import java.util.Map;
  * Created by my hp on 3/2/2016.
  */
 public class Login extends AppCompatActivity implements View.OnClickListener{
-
+SharedPreferences user_info;
    String username,password;
     ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
+user_info=getSharedPreferences("userinfo",0);
         Toolbar t=(Toolbar)findViewById(R.id.toolbar_login);
         setSupportActionBar(t);
 
@@ -130,6 +131,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                             public void onResponse(String response) {
                                 pd.hide();
                                 Toast.makeText(Login.this,response, Toast.LENGTH_LONG).show();
+                                SharedPreferences.Editor edit=user_info.edit();
+                                edit.putString("response",response);
+                                edit.commit();
 
                                 Class i = null;
                                 try {
