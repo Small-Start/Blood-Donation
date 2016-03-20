@@ -33,15 +33,16 @@ ListView lv=(ListView)findViewById(R.id.listview_searchresult);
             e.printStackTrace();
         }
         ArrayList<HashMap<String,String>> list=new ArrayList<>();
-
+if(jr.length()!=0){
         for(int i=0;i<jr.length();i++)
         {
             JSONObject ob= null;
             HashMap<String,String> map=new HashMap<>();
             try {
                 ob = jr.getJSONObject(i);
-                map.put("name",ob.getString("name"));
-                map.put("km",ob.getString("km"));
+                map.put("name", ob.getString("name"));
+
+                map.put("km", String.format("%.2f", Float.parseFloat(ob.getString("km"))));
                 list.add(map);
 
             } catch (JSONException e) {
@@ -49,6 +50,13 @@ ListView lv=(ListView)findViewById(R.id.listview_searchresult);
             }
 
         }
+}
+        else {
+    HashMap<String, String> map = new HashMap<>();
+    map.put("name", "Aw Snap! We could not find any donors for you! Try contacting Blood Banks near you!");
+    map.put("km", "large");
+    list.add(map);
+}
         ArrayAdapter items=new CustomListAdapter(getApplicationContext(),R.layout.custom_list,list);
         lv.setAdapter(items);
         lv.setOnItemClickListener(this);

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myhp.bloodbank">
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
@@ -12,6 +13,9 @@
         android:supportsRtl="true"
         android:name=".volley.ApplicationWrapper"
         android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC3KY4tu8WtwenvmeZA3yIQrMqHSrN5kJE"/>
         <activity
             android:name=".Firsttime"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -35,6 +39,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Userdetails"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Bloodbank"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Resultsbloodbank"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
 
     </application>
