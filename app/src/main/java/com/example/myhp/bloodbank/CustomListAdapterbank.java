@@ -19,12 +19,14 @@ public class CustomListAdapterbank  extends ArrayAdapter {
 
     private Context mContext;
     private int id;
+    boolean success;
     protected List<HashMap<String,String>> items ;
 
-    public CustomListAdapterbank(Context context, int textViewResourceId, List<HashMap<String,String>> list)
+    public CustomListAdapterbank(Context context, int textViewResourceId, List<HashMap<String,String>> list,boolean success)
     {
         super(context, textViewResourceId, list);
         mContext = context;
+        this.success=success;
         id = textViewResourceId;
         items = list ;
     }
@@ -45,7 +47,7 @@ TextView name=(TextView)mView.findViewById(R.id.textView_bloodbank_name);
         HashMap<String,String> hash=new HashMap<>();
 
 
-        if(items.get(position) != null )
+        if(items.get(position) != null&& success)
         {
             hash=items.get(position);
             String s[]=hash.get("contact").split("\n");
@@ -58,6 +60,12 @@ TextView name=(TextView)mView.findViewById(R.id.textView_bloodbank_name);
             // int color = Color.argb(200, 255, 64, 64);
             // text.setBackgroundColor( color );
 
+        }
+        else {
+            address.setTextColor(Color.BLACK);
+            address.setText("could not load data!");
+            name.setText("");
+            contact.setText("");
         }
 
 

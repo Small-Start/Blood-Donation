@@ -49,7 +49,11 @@ public class Resultsbloodbank extends AppCompatActivity implements AdapterView.O
                     @Override
                     public void onResponse(String response) {
                        Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
-                        setlist(response);
+                        try {
+                            setlist(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                         pd.hide();
                     }
                 },
@@ -73,48 +77,56 @@ public class Resultsbloodbank extends AppCompatActivity implements AdapterView.O
 
     }
 
-    private void setlist(String response) {
+    private void setlist(String response) throws JSONException {
         ListView lv=(ListView)findViewById(R.id.listview_searchresult_blood_bank);
         JSONObject jo= null;
         JSONArray jr=null;
         try {
             jo = new JSONObject(response);
+            if(jo.getBoolean("success"))
             jr=jo.getJSONArray("records");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        ArrayList<HashMap<String,String>> list=new ArrayList<>();
-        if(jr.length()!=0){
-            for(int i=0;i<jr.length();i++)
-            {
-                JSONObject ob= null;
-                HashMap<String,String> map=new HashMap<>();
-                try {
-                    ob = jr.getJSONObject(i);
+        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+        if(jo.getBoolean("success")) {
 
-                    map.put("address", ob.getString("address"));
-                    map.put("contact", ob.getString("contact")+"\n"+ob.getString("h_name"));
+            if (jr.length() != 0) {
+                for (int i = 0; i < jr.length(); i++) {
+                    JSONObject ob = null;
+                    HashMap<String, String> map = new HashMap<>();
+                    try {
+                        ob = jr.getJSONObject(i);
+
+                        map.put("address", ob.getString("address"));
+                        map.put("contact", ob.getString("contact") + "\n" + ob.getString("h_name"));
 
 
-                    list.add(map);
+                        list.add(map);
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                 }
+            } else {
+                HashMap<String, String> map = new HashMap<>();
+                map.put("address", "Aw Snap! We could not find any blood banks near you! Try contacting Blood Banks near you!");
 
+                map.put("contact", "");
+                list.add(map);
             }
         }
-        else {
+        else
+        {
             HashMap<String, String> map = new HashMap<>();
-            map.put("name", "Aw Snap! We could not find any blood banks near you! Try contacting Blood Banks near you!");
-            map.put("state", "");
-            map.put("city", "");
-            map.put("address","");
+            map.put("address", "Aw Snap! We could not find any blood banks in the specified area!");
+
             map.put("contact", "");
             list.add(map);
         }
-        ArrayAdapter items=new CustomListAdapterbank(getApplicationContext(),R.layout.listitem_bloodbank,list);
+        ArrayAdapter items=new CustomListAdapterbank(getApplicationContext(),R.layout.listitem_bloodbank,list,jo.getBoolean("success"));
         lv.setAdapter(items);
         lv.setOnItemClickListener(this);
     }
