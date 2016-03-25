@@ -10,7 +10,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_name"
+        android:id="@+id/edit_name_patient"
         android:textSize="24sp"
         android:hint="Patient Name"
         android:fontFamily="sans-serif-light"
@@ -32,7 +32,9 @@ android:elevation="2dp"
     <Spinner
         android:paddingBottom="15dp"
         android:paddingTop="15dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_take"
        />

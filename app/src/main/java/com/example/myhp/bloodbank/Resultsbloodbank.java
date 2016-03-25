@@ -112,7 +112,7 @@ public class Resultsbloodbank extends AppCompatActivity implements AdapterView.O
                 }
             } else {
                 HashMap<String, String> map = new HashMap<>();
-                map.put("address", "Aw Snap! We could not find any blood banks near you! Try contacting Blood Banks near you!");
+                map.put("address", "Aw Snap! We could not find any blood banks near you!");
 
                 map.put("contact", "");
                 list.add(map);

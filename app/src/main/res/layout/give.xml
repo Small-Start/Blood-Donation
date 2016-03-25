@@ -39,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search Blood Banks"
+        style="@style/RobotoButtonStyle"
         android:layout_marginTop="40dp"
         android:id="@+id/b_search_blood_banks"
         android:layout_gravity="center_horizontal" />
