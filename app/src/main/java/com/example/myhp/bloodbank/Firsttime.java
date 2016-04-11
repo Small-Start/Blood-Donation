@@ -15,6 +15,13 @@ public class Firsttime extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bloodmain);
+        int i=getSharedPreferences("firstime",0).getInt("first",0);
+        if(i==1){
+Intent intent=new Intent(getApplicationContext(),Bloodmain.class);
+            startActivity(intent);
+        }
+
+
 
         findViewById(R.id.firsttime_login).setOnClickListener(this);
         findViewById(R.id.firsttime_signup).setOnClickListener(this);
@@ -30,6 +37,7 @@ public class Firsttime extends AppCompatActivity implements View.OnClickListener
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
+
                 Intent k = new Intent(getApplicationContext(), i);
                 startActivity(k);
                 break;

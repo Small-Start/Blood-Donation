@@ -171,10 +171,10 @@ SharedPreferences.Editor editor=sp.edit();
                             @Override
                             public void onResponse(String response) {
                                 pd.hide();
-                                Toast.makeText(Signup.this, response, Toast.LENGTH_LONG).show();
+                             //   Toast.makeText(Signup.this, response, Toast.LENGTH_LONG).show();
                                 Class i = null;
                                 try {
-                                    i = Class.forName("com.example.myhp.bloodbank.Bloodmain");
+                                    i = Class.forName("com.example.myhp.bloodbank.Login");
                                 } catch (ClassNotFoundException e) {
                                     e.printStackTrace();
                                 }
@@ -199,7 +199,6 @@ SharedPreferences.Editor editor=sp.edit();
                         params.put("password", password);
                         params.put("username", username);
                         params.put("pno",pno);
-                        params.put("bloodgroup", bloodgroup);
 
                         //returning parameter
                         return params;

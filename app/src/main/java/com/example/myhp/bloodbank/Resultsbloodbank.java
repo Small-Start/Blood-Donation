@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -39,6 +40,10 @@ public class Resultsbloodbank extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_bloodbank);
+        Toolbar t1=(Toolbar)findViewById(R.id.toolbar_searchresult_blood_bank);
+        setSupportActionBar(t1);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         pd=new ProgressDialog(this,ProgressDialog.STYLE_SPINNER);
         pd.setMessage("Loading Results");
         pd.show();

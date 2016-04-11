@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +24,10 @@ public class Bloodbank extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bloodbank);
         View v=findViewById(R.id.blood_bank_layout_main);
+        Toolbar t1=(Toolbar)findViewById(R.id.toolbar_bloodbank);
+        setSupportActionBar(t1);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 findViewById(R.id.b_bloodbank_next).setOnClickListener(new View.OnClickListener() {
     @Override

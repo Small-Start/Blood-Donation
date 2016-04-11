@@ -27,7 +27,8 @@
         </activity>
         <activity
             android:name=".Bloodmain"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            ></activity>
         <activity
             android:name=".Login"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
@@ -36,16 +37,20 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Searchresult"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".Bloodmain"></activity>
         <activity
             android:name=".Userdetails"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".Searchresult"></activity>
         <activity
             android:name=".Bloodbank"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".Bloodmain"></activity>
         <activity
             android:name=".Resultsbloodbank"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".Bloodmain"></activity>
 
     </application>
 

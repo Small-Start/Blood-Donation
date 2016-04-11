@@ -130,19 +130,24 @@ user_info=getSharedPreferences("userinfo",0);
                             @Override
                             public void onResponse(String response) {
                                 pd.hide();
-                                Toast.makeText(Login.this,response, Toast.LENGTH_LONG).show();
-                                SharedPreferences.Editor edit=user_info.edit();
-                                edit.putString("response",response);
+                                // Toast.makeText(Login.this,response, Toast.LENGTH_LONG).show();
+                                SharedPreferences.Editor edit = user_info.edit();
+                                edit.putString("response", response);
+                                getSharedPreferences("user", 0).edit().putString("username", username).apply();
                                 edit.commit();
-
-                                Class i = null;
-                                try {
-                                    i = Class.forName("com.example.myhp.bloodbank.Bloodmain");
-                                } catch (ClassNotFoundException e) {
-                                    e.printStackTrace();
+                                if (response.equals("Wrong")) {
+                                    Toast.makeText(Login.this,"Wrong username or password", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Class i = null;
+                                    try {
+                                        i = Class.forName("com.example.myhp.bloodbank.Bloodmain");
+                                    } catch (ClassNotFoundException e) {
+                                        e.printStackTrace();
+                                    }
+                                    getSharedPreferences("firsttime",0).edit().putInt("first",1).apply();
+                                    Intent k = new Intent(getApplicationContext(), i);
+                                    startActivity(k);
                                 }
-                                Intent k = new Intent(getApplicationContext(), i);
-                                startActivity(k);
                             }
                         },
                         new Response.ErrorListener() {

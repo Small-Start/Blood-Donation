@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +36,8 @@ public class Userdetails extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.userdetails);
         Toolbar t = (Toolbar) findViewById(R.id.toolbar_userdetails);
         setSupportActionBar(t);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         //  pd=new ProgressDialog(getApplicationContext());
         // pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // pd.show();
@@ -91,5 +94,11 @@ public class Userdetails extends AppCompatActivity implements View.OnClickListen
             smsIntent.putExtra("sms_body"  , "Hello! I'm "+name +", I'm in need of a blood donor! Can you help me out?");
             startActivity(smsIntent);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 }

@@ -36,4 +36,11 @@
         android:text="Next"
         android:id="@+id/b_bloodbank_next"
         android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingTop="20dp"
+        android:src="@drawable/taketab"/>
 </LinearLayout>

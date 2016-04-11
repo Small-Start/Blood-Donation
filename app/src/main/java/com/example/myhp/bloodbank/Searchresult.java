@@ -3,6 +3,7 @@ package com.example.myhp.bloodbank;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,6 +25,10 @@ String response;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.searchresults);
+        Toolbar t=(Toolbar)findViewById(R.id.toolbar_searchresult);
+        setSupportActionBar(t);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 ListView lv=(ListView)findViewById(R.id.listview_searchresult);
         response=getIntent().getExtras().getString("response");
         JSONArray jr= null;
@@ -43,6 +48,7 @@ if(jr.length()!=0){
                 map.put("name", ob.getString("name"));
 
                 map.put("km", String.format("%.2f", Float.parseFloat(ob.getString("km"))));
+                if(!(ob.getString("username").equals(getSharedPreferences("user",0).getString("username","hi"))))
                 list.add(map);
 
             } catch (JSONException e) {

@@ -2,6 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/name_textinut_take"
@@ -50,4 +57,12 @@ android:elevation="2dp"
         android:textColor="@color/text"
         android:fontFamily="sans-serif-light"
         android:layout_gravity="center_horizontal" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingTop="20dp"
+        android:src="@drawable/taketab"/>
 </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
