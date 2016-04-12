@@ -42,7 +42,16 @@
         style="@style/RobotoButtonStyle"
         android:layout_marginTop="40dp"
         android:id="@+id/b_search_blood_banks"
+        android:paddingBottom="10dp"
         android:layout_gravity="center_horizontal" />
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/logout"
+        android:adjustViewBounds="true"
+        android:id="@+id/b_logout"
+
+        android:layout_gravity="end"/>
 
 </LinearLayout>
     </android.support.v7.widget.CardView>

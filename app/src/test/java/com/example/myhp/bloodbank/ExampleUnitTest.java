@@ -1,4 +1,4 @@
-package com.example.myhp.bloodbank;
+package com.kani.myhp.bloodbank;
 
 import org.junit.Test;
 

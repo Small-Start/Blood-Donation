@@ -113,6 +113,7 @@
                     android:layout_marginTop="@dimen/big_margin"
                     android:text="LOGIN"
                     android:fontFamily="sans-serif-light"
+                    style="@style/RobotoButtonStyle"
                     android:textColor="@color/md_white_1000" />
 
             </RelativeLayout>

@@ -6,7 +6,7 @@
     >
 
 
-    <com.example.myhp.bloodbank.SlidingTabLayout
+    <com.kani.myhp.bloodbank.SlidingTabLayout
         android:id="@+id/tabs"
 
         android:layout_width="match_parent"

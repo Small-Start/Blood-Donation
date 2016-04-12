@@ -34,6 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
+        style="@style/RobotoButtonStyle"
+        android:fontFamily="sans-serif-light"
         android:id="@+id/b_bloodbank_next"
         android:layout_gravity="center_horizontal" />
 

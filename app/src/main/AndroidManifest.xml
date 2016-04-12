@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myhp.bloodbank">
+    package="com.kani.myhp.bloodbank">
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -8,16 +8,16 @@
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".volley.ApplicationWrapper"
+        android:name="com.kani.myhp.bloodbank.volley.ApplicationWrapper"
         android:theme="@style/AppTheme.NoActionBar">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC3KY4tu8WtwenvmeZA3yIQrMqHSrN5kJE"/>
         <activity
-            android:name=".Firsttime"
+            android:name="com.kani.myhp.bloodbank.Firsttime"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,31 +26,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Bloodmain"
+            android:name="com.kani.myhp.bloodbank.Bloodmain"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             ></activity>
         <activity
-            android:name=".Login"
+            android:name="com.kani.myhp.bloodbank.Login"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-        android:name=".Signup"
+        android:name="com.kani.myhp.bloodbank.Signup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-            android:name=".Searchresult"
+            android:name="com.kani.myhp.bloodbank.Searchresult"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".Bloodmain"></activity>
+            android:parentActivityName="com.kani.myhp.bloodbank.Bloodmain"></activity>
         <activity
-            android:name=".Userdetails"
+            android:name="com.kani.myhp.bloodbank.Userdetails"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".Searchresult"></activity>
+            android:parentActivityName="com.kani.myhp.bloodbank.Searchresult"></activity>
         <activity
-            android:name=".Bloodbank"
+            android:name="com.kani.myhp.bloodbank.Bloodbank"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".Bloodmain"></activity>
+            android:parentActivityName="com.kani.myhp.bloodbank.Bloodmain"></activity>
         <activity
-            android:name=".Resultsbloodbank"
+            android:name="com.kani.myhp.bloodbank.Resultsbloodbank"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".Bloodmain"></activity>
+            android:parentActivityName="com.kani.myhp.bloodbank.Bloodmain"></activity>
 
     </application>
 
