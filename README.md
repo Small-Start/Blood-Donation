@@ -3,7 +3,7 @@
 ##What is Blood Donation ?
 <p>This is an android application that removes the gap between blood donors and the people in need of blood. This application provides user with real time location of potential donors and how to contact them.
 </p>
-
+[![Gitter](https://badges.gitter.im/Small-Start/Blood-Donation.svg)](https://gitter.im/Small-Start/Blood-Donation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ##How to Contribute?
 
 1) Install Android Studio on your system.</br>
